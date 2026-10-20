@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: auth-app
+    # we can also run particular profile/version using environment variable
+    #in edit option of run place
+  profiles:
+    active: dev
+server:
+  port: 8082
+
+#Configurations
+
+
+#database configuaration
+
+
+
+#email configuration
+
+#oauth2 configuraton
