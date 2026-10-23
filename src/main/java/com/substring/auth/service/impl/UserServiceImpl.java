@@ -7,7 +7,6 @@ import com.substring.auth.helper.UserHelpler;
 import com.substring.auth.repository.UserRepository;
 import com.substring.auth.service.IUserService;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.cache.annotation.CacheEvict;
@@ -18,12 +17,16 @@ import com.substring.auth.exceptions.IllegalArgumentException;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class UserServiceImpl implements IUserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper) {
+        this.userRepository = userRepository;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
     @Transactional

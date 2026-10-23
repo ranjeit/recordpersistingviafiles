@@ -7,9 +7,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class AuthServiceIpl implements IAuthService {
     private final IUserService userService;
+
+    public AuthServiceIpl(IUserService userService) {
+        this.userService = userService;
+    }
+
 
     @Override
     public UserDto registerUser(UserDto userDto) {
